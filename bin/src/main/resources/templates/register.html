@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>註冊</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	</head>
+	
+	<body style="padding: 20px" >
+		<h1>資料註冊</h1>
+	    <form th:action="@{/register/write_in}" action="*"
+			  method="post">
+			 <div th:object="${personInformation}" class="form-group">
+			 	<input type="text" th:field="${personInformation.name}" placeholder="請輸入姓名" /><p/>
+            	<input type="date" th:field="${personInformation.birthDate}"><p/>
+            	<input type="text" th:field="${personInformation.phoneNumber}" placeholder="請輸入電話號碼"/><p/>
+			 </div>
+			 <div th:object="${loginIdentity}" class="form-group">
+			 	<input type="text" th:field="${loginIdentity.accountName}" placeholder="請輸入帳號" /><p/>
+            	<input type="password" th:field="${loginIdentity.accountPassword}" placeholder="請輸入密碼"/><p/>
+			 </div>
+            <button type="submit" class="btn btn-primary">註冊</button>
+            <button type="reset" class="btn btn-primary">重置</button>
+	       
+	    </form>
+	</body>
+</html>
